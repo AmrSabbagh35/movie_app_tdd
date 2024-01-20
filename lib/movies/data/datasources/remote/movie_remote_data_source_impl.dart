@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:movie_app/constants/consts.dart';
 import 'package:movie_app/core/errors/server_exception.dart';
 import 'package:movie_app/movies/data/datasources/movie_remote_data_source.dart';
 import 'package:movie_app/movies/data/models/movie_model.dart';
@@ -11,9 +12,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
   final http.Client client;
 
   MovieRemoteDataSourceImpl({required this.client});
-
-  static const BASE_URL = "https://api.themoviedb.org/3";
-  static const API_KEY = 'f47d39a4ec12ecae1c6f318b061e3e1f';
 
   @override
   Future<List<MovieModel>> getPopularMovies() async {
